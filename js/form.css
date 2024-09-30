@@ -1,0 +1,78 @@
+.error {
+    color: red;
+}
+
+.container {
+    overflow-y: auto;
+    
+    height: 500px;
+    width: 800px;
+    background-color: #CEECF5;
+    padding: 20px;
+   padding-left: 25px;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(8, 7, 7, 0.1);
+}
+
+#otherDepartmentRow {
+  /*  display: none;*/
+  visibility: hidden;
+    /* Initially hide the 'Other' input */
+}
+
+::placeholder {
+    font-weight: 100;
+
+    color: #999;
+
+}
+
+body {
+    display: flex;
+    justify-content: flex-start; /* center*/ 
+    align-items: center;
+    min-height: 100vh;
+    background-color: #548687;
+    margin: 0;
+    /* background-color: #f0f0f0; */
+    /* Optional: add a background color */
+}
+
+input, select {
+ 
+    padding: 10px; /* Add some padding for better spacing */
+    border-radius: 5px; /* Optional: makes the inputs rounded */
+    border: 1px solid #ccc; /* Optional: adds a border to the input and dropdown */
+    box-sizing: border-box; /* Ensure padding is included in the width */
+}
+#gender-row{
+    /* justify-content: center; */
+    display: flex;
+    padding: 15px;
+}
+#btn{
+    padding: 10px 20px;
+    background-color: forestgreen; 
+    color: aliceblue;
+    border-radius: 1rem;
+}
+#resetbtn{
+    padding: 10px 20px;
+    background-color: forestgreen; 
+    color: aliceblue;
+    border-radius: 1rem;
+}
+table {
+    width: 100%;
+    border: 1px solid;
+    border-collapse: collapse;
+    margin: 20px auto;
+
+}
+th, td {
+    border: 1px solid black;
+    padding: 10px;
+    text-align: left;
+   
+}
+

@@ -1,0 +1,188 @@
+<!-- <script src="js/jquery-3.7.1.js"></script> -->
+
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Form with Restrictions</title>
+    <script src="js/jquery-3.7.1.js"></script>
+    <link rel="stylesheet" href="js/form.css">
+
+
+</head>
+
+<body>
+
+    <div class="container">
+
+        <h1 style="color:white;background: linear-gradient(90deg, #851B41 0%, #6937BE 100%);"> Employee Registration
+            Form</h1>
+        <form id="registrationForm">
+            <table class="table" style="margin-top: 20px;">
+
+
+                <tr>
+                    <td> <label for="name">📝Name (Max 50 characters):</label></td>
+                    <td>
+                        <input type="text" id="name" placeholder="Enter Your Name " name="name" maxlength="50" pattern="[A-Za-z\s]+" required>
+                        <label id="nameError" class="error"></label>
+                    </td>
+
+                    <td><label for="address">🏠Address:</label></td>
+                    <td>
+                        <input type="text" id="address" placeholder="Enter Your Address " name="address" maxlength="50"
+                            required>
+                        <label id="addressError" class="error"></label>
+                    </td>
+
+
+                </tr>
+
+                <tr>
+
+                    <!-- <td><label for="city">City:</label></td> -->
+                    <td><label for="city"><i class="fas fa-city"></i> 🏙️City:</label></td>
+                    <td>
+                        <input type="text" id="city" placeholder="Enter Your City" name="city" pattern="[A-Za-z\s]+" required>
+                        <label id="cityError" class="error"></label> <!-- Error label for City -->
+                    </td>
+
+
+                    <td><label for="dist"><i></i>🏙️Dist:</label></td>
+                    <td>
+                        <input type="text" id="dist" placeholder="Enter Your district" name="dist" pattern="[A-Za-z\s]+" required>
+                        <label id="distError" class="error"></label> <!-- Error label for dist -->
+                    </td>
+
+                </tr>
+
+
+                <tr>
+
+
+                    <td><label for="mobile">☎ Mobile Number (10 digits):</label></td>
+                    <td>
+                        <input type="Number" id="mobile" class="form-control" placeholder="Enter Mobile Number"
+                            name="mobile" maxlength="10" required>
+                        <label id="mobileError" class="error"></label> <!-- Error label for Mobile -->
+                    </td>
+
+                    <td><label for="email">✉ Email id:</label></td>
+                    <td>
+                        <input type="email" id="email" class="form-control" placeholder="name@example.com" name="email">
+                        <label id="emailError" class="error"></label> <!-- Error label for Email -->
+                    </td>
+
+
+                </tr>
+
+
+                <tr>
+
+                    <td>
+                        <label for="gender" style="color: red;"></label>
+                        <label for="gender">⚥ Gender:</label>
+                    </td>
+                    <td id="gender-row">
+                        <input type="radio" id="male"   name="gender" value="Male" required> Male
+                        <input type="radio" id="female"   name="gender" value="Female"required> Female
+                        <input type="radio" id="other"  name="gender" value="other"> Other
+                        <label id="genderError" class="error"></label>
+                    </td>
+
+                    <td><label for="age">⌛Age:</label></td>
+                    <td>
+                        <input type="number" id="age" placeholder="Enter Your Age" name="age" required>
+                        <label id="ageError" class="error"></label> <!-- Error label for Age -->
+                    </td>
+
+
+
+                </tr>
+
+                <tr>
+                    <td><label for="department">🏛️Department:</label></td>
+                    <td>
+                        <select id="department" name="department">
+                            <option value="" selected hidden>Select department</option>
+                            <option value="IT">IT Department</option>
+                            <option value="HR">HR Department</option>
+                            <option value="Finance">Finance Department</option>
+                            <option value="Other">Other</option>
+                        </select>
+
+                        <label id="departmentError" class="error"></label>
+                    </td>
+                
+                    <td>
+                        <label for="otherDeptInput">🏛️Specify Department:</label>
+                    </td>
+                    <td id="otherDepartmentRow">
+                        <input type="text" id="otherDeptInput"  name="otherDeptInput" placeholder="Enter Department" pattern="[A-Za-z\s]+" required>
+                        <label id="otherDepartmentError" class="error"></label>
+                    </td>
+
+
+
+                </tr>
+
+                <!-- Hidden field for 'Other' department -->
+                <!-- <tr id="otherDepartmentRow">
+                    <td>
+                        <label for="otherDeptInput">🏛️Specify Department:</label>
+                    </td>
+                    <td>
+                        <input type="text" id="otherDeptInput" placeholder="Enter Department" required>
+                        
+                    </td>
+                </tr> -->
+
+            </table>
+
+            <div style="text-align: center;  margin-top: 20px; ">
+                <button class="btn btn-primary" id="btn" type="submit">
+                    Save
+                </button>
+                <button class="btn btn-reset" id="resetbtn" type="reset">Reset</button>
+
+            </div>
+        </form>
+        <h4 style="color: red;">Note : </h4>
+        <ul>
+            <li> Ensure that your email is valid for further communication.</li>
+            <li> Age should be 18 years or more.</li>
+
+        </ul>
+
+        <div id="errorMessages" class="error"></div>
+
+        <script src="js/script.js"></script>
+   </div> 
+  <div class="container">
+    
+     <table id="dataTable">
+        <caption style="color:white; background-color: cornflowerblue; "><h1>Employee Information</h1></caption>
+        <thead>
+            <tr style="color:white;background: linear-gradient(90deg, #851B41 0%, #6937BE 100%);">
+                <th>Name</th>
+                <th>Address</th>
+                <th>City</th>
+                <th>District</th>
+                <th>Mobile no </th>
+                <th>Age</th>
+                <th>Gender</th>
+                <th>Email ID</th>
+                <th>Department</th>
+              
+            </tr>
+        </thead>
+        <tbody>
+            
+          
+        </tbody>
+    </table>
+
+  </div>
+</body>
